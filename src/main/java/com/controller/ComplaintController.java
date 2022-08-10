@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bean.ComplaintBean;
@@ -47,4 +48,12 @@ public class ComplaintController {
 		complaintdao.deleteComplaint(userId);
 		return "Deleted Complaint";
 	}
+	@PostMapping("/mapcomplaint")
+	public ResponseEntity<?> mapComplaint(@RequestParam("complaintid") int complainId, @RequestParam("userid") int userId, @RequestParam("houseid") int houseId) {
+		System.out.println(userId);
+		System.out.println(houseId);
+		complaintdao.updateComplaintForUser(userId, houseId,complainId);
+		return ResponseEntity.ok("House mapped");
+	}
 }
+

@@ -1,8 +1,16 @@
 package com.bean;
 
 public class UserBean {
-		int userid;
+		int userid,houseid;
 		String email, password,firstName,lastName,dob;
+
+		public int getHouseid() {
+			return houseid;
+		}
+
+		public void setHouseid(int houseid) {
+			this.houseid = houseid;
+		}
 
 		public String getEmail() {
 			return email;

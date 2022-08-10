@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bean.DeliveryBean;
@@ -46,6 +47,13 @@ public class SuggestionController {
 	public String deleteSuggestions(@PathVariable("suggestionId") int suggestionId) {
 		suggestiondao.deleteSuggestion(suggestionId);
 		return "Deleted Suggestion";
+	}
+	@PostMapping("/mapsuggestion")
+	public ResponseEntity<?> mapsuggestion(@RequestParam("suggestionid") int suggestionId, @RequestParam("userid") int userId, @RequestParam("houseid") int houseId) {
+		System.out.println(userId);
+		System.out.println(houseId);
+		suggestiondao.updateSuggestionForUser(userId, houseId,suggestionId);
+		return ResponseEntity.ok("User mapped");
 	}
 	
 

@@ -1,9 +1,16 @@
 package com.bean;
 
 public class DeliveryBean {
-	int deliveryid,userid;
+	int deliveryid,userid,houseid;
 	String couriertype,status;
 	boolean isallowed;
+	
+	public int getHouseid() {
+		return houseid;
+	}
+	public void setHouseid(int houseid) {
+		this.houseid = houseid;
+	}
 	public int getDeliveryid() {
 		return deliveryid;
 	}

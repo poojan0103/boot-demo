@@ -45,4 +45,9 @@ public class Deliverydao {
 
 	}
 
+	public int updateDeliveryForUser(int userId, int houseId, int deliveryId) {
+		// TODO Auto-generated method stub
+		return stmt.update("update delivery set  userid =   ?,houseid = ? where deliveryid = ?", deliveryId, userId,houseId);
+	}
+
 }

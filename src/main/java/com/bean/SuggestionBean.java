@@ -1,8 +1,21 @@
 package com.bean;
 
 public class SuggestionBean {
-	int suggestionid;
+	int suggestionid,userid,houseid;
 	String membername,date,suggestion,reason,acknowledgement;
+	
+	public int getUserid() {
+		return userid;
+	}
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+	public int getHouseid() {
+		return houseid;
+	}
+	public void setHouseid(int houseid) {
+		this.houseid = houseid;
+	}
 	public int getSuggestionid() {
 		return suggestionid;
 	}

@@ -42,4 +42,9 @@ public class Suggestiondao {
 
 	}
 
+	public int updateSuggestionForUser(int userId, int houseId, int suggestionId) {
+		// TODO Auto-generated method stub
+		return stmt.update("update suggestion set  userid =   ?,houseid = ? where suggestionid = ?", suggestionId, userId,houseId);
+	}
+
 }

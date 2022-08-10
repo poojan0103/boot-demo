@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -47,6 +48,12 @@ public class DeliveryController {
 		deliverydao.deleteDelivery(deliveryId);
 		return "Deleted Delivery";
 	}
-	
+	@PostMapping("/mapdelivery")
+	public ResponseEntity<?> mapdelivery(@RequestParam("deliveryid") int deliveryId, @RequestParam("userid") int userId, @RequestParam("houseid") int houseId) {
+		System.out.println(userId);
+		System.out.println(houseId);
+		deliverydao.updateDeliveryForUser(userId, houseId,deliveryId);
+		return ResponseEntity.ok("User mapped");
+	}
 
 }
