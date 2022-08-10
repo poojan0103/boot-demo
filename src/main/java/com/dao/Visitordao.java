@@ -44,4 +44,9 @@ public class Visitordao {
 
 	}
 
+	public int updateVisitorForUser(int userId, int houseId, int visitorId) {
+		// TODO Auto-generated method stub
+		return stmt.update("update visitor set  userid =   ?,houseid = ? where visitorid = ?",  userId,houseId,visitorId);
+	}
+
 }
